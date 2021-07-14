@@ -15,6 +15,7 @@ def get_sections(filename):
     with open(filename, 'rb') as f:
         content = f.read().decode('utf-8')
     content = content.replace(u'\ufeff', u'')
+    content = content.replace(u':', u' --')
     return content.split(BOUNDARY)
 
 
